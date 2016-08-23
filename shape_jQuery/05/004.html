@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>左右选择框</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		.content{
+			float: left;
+			position: relative;
+		}
+		span{
+			display: block;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<select multiple="multiple" id="select1" style="width: 120px;height: 160px;">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		<div>
+			<span id="add">选中添加到右边&gt;&gt;</span>
+			<span id="add_all">全部添加到右边&gt;&gt;</span>
+		</div>
+	</div>
+	<div class="content">
+		<select multiple="multiple" id="select2" style="width: 120px;height:160px"></select>
+		<div>
+			<span id="remove">&lt;&lt;选中删除到左边</span>
+			<span id="remove_all">&lt;&lt;全部删除到左边</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#add').click(function(){
+		var $option = $('#select1 option:selected');
+		var $remove = $option.remove();
+		$('#select2').append($remove);
+	});
+
+	$('#add_all').click(function(){
+		var $option = $('#select1 option');
+		$option.remove();
+		$('#select2').append($option);
+	});
+
+	$('#remove').click(function(){
+		var $option = $('#select2 option:selected');
+		var $remove = $option.remove();
+		$('#select1').append($remove);
+	});
+
+	$('#remove_all').click(function(){
+		var $option = $('#select2 option');
+		$option.remove();
+		$('#select1').append($option);
+	});
+</script>
+</html>
