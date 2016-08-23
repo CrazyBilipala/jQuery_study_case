@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文本域的高度控制</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		#bigger,#smaller{
+			cursor: pointer;
+			background: #fcc;
+		}
+	</style>
+</head>
+<body>
+<div class="msg">
+	<div class="mag_controll">
+		<span id="bigger">放大</span>
+		<span id="smaller">缩小</span>
+	</div>	
+</div>
+<form action="#">
+	<textarea id="comment" cols="20" rows="8">1234567800qazwsedrcjkkalhgj</textarea>
+</form>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('#bigger').click(function(){
+			if ($('#comment').height()<500) {
+				$('#comment').css('height','+=30');
+			}
+		});
+
+		$('#smaller').click(function(){
+			if ($('#comment').height()>50) {
+				$('#comment').css('height','-=30');
+			}
+		});
+	});
+</script>
+</html>
