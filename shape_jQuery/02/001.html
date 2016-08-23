@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本选择器的使用</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div,span,p{
+			width: 140px;
+			height: 140px;
+			margin: 5px;
+			background: #aaa;
+			border: 1px solid #fe5621;
+			float: left;
+			font-size: 17px;
+		}
+		div.mini{
+			width: 55px;
+			height: 55px;
+			background-color: #aaa;
+			font-size: 12px;
+		}
+		div.hide{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<div class="one" id="one">
+	id为one，class为one的div
+	<div class="mini">class为mini</div>
+</div>
+<div class="one" id="two" title="test">
+	id为two，class为one，title为test的div
+	<div class="mini" title="other">class为mini，title为other</div>
+	<div class="mini" title="test">class为mini，title为test</div>
+</div>
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini"></div>
+</div>
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini" title="tesst">class为mini，title为tesst</div>
+</div>
+<div style="display: none;" class="none">style为display为“none”的div</div>
+<div class="hide">class为hide的div</div>
+<div>
+	包含input的type为hidden的div
+	<input type="hiddden" size="8">
+</div>
+<span id="mover">正在执行动画的span元素</span>
+</body>
+<script type="text/javascript">
+	// $('#one').css('background','#bbffaa');
+	// $('.mini').css('background','#bbffaa');
+	// $('div').css('background','#bbffaa');
+	// $('span,#two').css('background','#bbffaa');
+	// $('*').css('background','#bbffee');
+
+	// $('body div').css('background','#bbffaa');
+	// $('body>div').css('background','#bbffaa');
+	// $('#one+div').css('background','#bbffaa');
+	// $('#two~div').css('background','#bbffaa');
+
+	// $('div:first').css('background','#bbffaa');
+	// $('div:last').css('background','#bbffaa');
+	// $('div:not(.one)').css('background','#bbffaa');
+	// $('div:even').css('background','#ffeeaa');
+	// $('div:odd').css('background','#ffbbaa');
+
+	// $('div:eq(3)').css('background','#ff00ee');
+	// $('div:gt(3)').css('background','#ffaaee');
+	// $('div:lt(3)').css('background','#ffbbee');
+
+	// $('div:contains("di")').css('background','#ffeeaa');
+	// $('div:empty').css('background','#ff00aa');
+	// $('div:has(mini)').css('background','#ff00aa');
+
+	// $('div:hidden').show(3000);
+
+
+	// $('div[title]').css('background','#ffeeaa');
+	// $('div[title=test]').css('background','#ffeeaa');
+	// $('div[title!=test]').css('background','#ffeeaa');
+	// $('div[title^=te]').css('background','#ffeeaa');
+	// $('div[title$=est]').css('background','#ffeeaa');
+	// $('div[title*=es]').css('background','#ffeeaa');
+
+	$('div.one:nth-child(2n)').css('background','#ffeeaa');
+
+</script>
+</html>

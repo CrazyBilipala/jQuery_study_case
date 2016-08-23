@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单元素的选择器</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<form id="form1" action="#">
+	可用元素: <input type="text" name="add" value="可用文本框">
+	不可用元素: <input type="text" name="email" disabled="disabled" value="不可用文本框">
+	可用元素: <input type="text" name="che" value="可用文本框">
+	不可用元素: <input type="text" name="name" disabled="disabled" value="不可用文本框">
+	<br/>
+	多选框<br/>
+	<input type="checkbox" name="newseletter" checked="checked" value="test1">test1
+	<input type="checkbox" name="newseletter" value="test2">test2
+	<input type="checkbox" name="newseletter" checked="checked" value="test3">test3
+	<input type="checkbox" name="newseletter" value="test4">test4
+	<input type="checkbox" name="newseletter" value="test5">test5
+	<div></div>
+	<br/>	
+	<br/>
+	下拉列表1 <br>
+	<select name="test" multiple="multiple" style="height: 100px">
+		<option>浙江</option>
+		<option>湖南</option>
+		<option>北京</option>
+		<option>天津</option>
+		<option selected="selected">深圳</option>
+		<option>湖北</option>
+	</select>
+	<br/>	
+	<br/>
+	下拉列表1 <br>
+	<select name="tes2" multiple="multiple" style="height: 100px">
+		<option>浙江</option>
+		<option>湖南</option>
+		<option>北京</option>
+		<option>天津</option>
+		<option>深圳</option>
+		<option selected="selected">双鸭山</option>
+	</select>
+	<br/>	
+	<br/>		
+</form>
+</body>
+<script type="text/javascript">
+	$('#form1 input:enabled').val("这里发生了变化");
+	$('#form1 input:disabled').val("这里也发生了变化");
+
+	// alert($('input:checked').length);
+	alert($('select :selected').text())
+</script>
+</html>

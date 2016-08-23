@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>给所有的p元素绑定事件</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		p{
+			font-size: 2em;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<p>div中的p元素</p>
+</div>
+<p>body中的p元素</p>
+<span><p>span中的p元素</p></span>
+</body>
+<script type="text/javascript">
+	$('p').click(function(){
+		alert($(this).text());
+	});
+</script>
+</html>
