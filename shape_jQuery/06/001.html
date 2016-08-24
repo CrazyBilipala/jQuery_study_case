@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>序列化元素</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<form>
+	name:<input type="text" name="name"><br>
+	age:<input type="text" name="age"><br>
+	password:<input type="password"  name="password"><br>
+	msg:<textarea name="msg"></textarea><br>
+	<input type="button" name="btn" onclick="send()" value="send">
+</form>
+</body>
+<script type="text/javascript">
+	function send(){
+		console.log($('form').serialize());
+	}
+</script>
+</html>
