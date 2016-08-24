@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单验证</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	<style type="text/css">
+		.error{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<form id="form">
+	姓名： <input type="text" name="name">
+	年龄： <input type="text" name="age">
+	性别： <input type="text" name="sex">
+	母星： <input type="text" name="place">
+	<input type="submit" name="send" value="提交">
+</form>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('#form').validate({
+			rules:{
+				name:"required",
+			},
+			messages:{
+				name:"请填写名称",
+			}
+		});
+	});
+</script>
+</html>
