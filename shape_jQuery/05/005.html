@@ -5,13 +5,15 @@
 	<meta charset="utf-8">
 	<script type="text/javascript" src="../resources/js/common/jquery-3.1.0.min.js"></script>
 	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
 		table{
 			width: 300px;
 		}
 		th{
 			border-bottom: 1px solid #fe5621;
-			margin: 0px;
-			padding: 0px;
 		}
 		tr{
 			text-align: center;
@@ -22,12 +24,16 @@
 		.odd{
 			background-color: #ffffee;
 		}
+		.selectd{
+			background-color: #fe5621;
+		}
 	</style>
 </head>
 <body>
-	<table>
+	<table cellspacing="0">
 		<thead>
 			<tr>
+				<th></th>
 				<th>姓名</th>
 				<th>性别</th>
 				<th>暂住地</th>
@@ -35,31 +41,37 @@
 		</thead>
 		<tbody>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>张三</td>
 				<td>男</td>
 				<td>浙江宁波</td>
 			</tr>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>李四</td>
 				<td>女</td>
 				<td>浙江杭州</td>
 			</tr>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>王五</td>
 				<td>男</td>
 				<td>湖南长沙</td>
 			</tr>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>赵六</td>
 				<td>男</td>
 				<td>浙江温州</td>
 			</tr>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>rain</td>
 				<td>男</td>
 				<td>浙江杭州</td>
 			</tr>
 			<tr>
+				<td><input type="radio" name="item"></td>
 				<td>MAXMAN</td>
 				<td>女</td>
 				<td>广东深圳</td>
@@ -70,5 +82,11 @@
 <script type="text/javascript">
 	$('tbody tr:even').addClass('even');
 	$('tbody tr:odd').addClass('odd');
+	// $('tbody tr:contains("rain")').addClass('selectd');
+
+
+	$('tbody>tr').click(function(){
+		$(this).addClass('selectd').siblings().removeClass('selectd').end().find(':radio').attr('checked',true);
+	});
 </script>
 </html>
